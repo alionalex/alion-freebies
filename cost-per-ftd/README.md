@@ -1,24 +1,26 @@
-# Cost per FTD
+# Meta vs real leads
 
-Ads Manager tells you what a lead cost. It doesn't tell you what an FTD cost.
+From 12 November 2026, Meta counts conversions on users' devices by default. Your reported leads may go up. The leads you actually get won't.
 
-This free Claude skill joins your ad spend export with your lead export. You get the real cost per FTD and the profit for every campaign and ad set. It often shows that the ad set with the cheapest leads is the most expensive one per FTD.
+This free Claude skill compares Meta's lead count with the leads you received, day by day. It shows your normal gap, the day it opened, and what it does to your CPL.
+
+The change doesn't apply in the EU or UK. The skill is still useful there, because it catches tracking problems on any day.
 
 ## What's in this folder
 
 | File | What it is |
 | --- | --- |
-| `cost-per-ftd-skill.zip` | The skill, ready to upload to Claude |
+| `meta-lead-gap-skill.zip` | The skill, ready to upload to Claude |
 | `SKILL.md` | The skill's instructions, if you want to read them |
 | `PROMPT.md` | The same thing as a copy-paste prompt, for ChatGPT or any other AI |
-| `samples/sample-meta-ads-export.csv` | A fake Meta Ads export to test with |
+| `samples/sample-meta-daily-export.csv` | A fake Meta Ads export, by day |
 | `samples/sample-lead-export.csv` | A fake lead export to test with |
 
 ## How to use it in Claude
 
-1. Click `cost-per-ftd-skill.zip` in the file list above, then click the download button (the arrow on the right).
+1. Click `meta-lead-gap-skill.zip` in the file list above, then click the download button (the arrow on the right).
 2. In Claude, open **Settings**, find **Skills** and upload the zip. Don't unzip it first.
-3. Start a chat, attach your ad spend export and your lead export, and ask: *"What did each FTD cost me?"*
+3. Start a chat, attach both files, and ask: *"Are Meta's lead numbers real?"*
 
 ## How to use it anywhere else
 
@@ -26,22 +28,22 @@ Open `PROMPT.md`, copy the prompt, and paste it into ChatGPT or any AI that read
 
 ## What you need
 
-- **Your ad spend export.** In Meta Ads Manager: pick the date range, break down by ad set, then **Reports → Export table data → CSV**.
-- **Your lead export.** One row per lead, with the campaign and ad set it came from (usually your UTM fields), its status, and the payout for FTDs.
+- **Your Meta Ads export, by day.** In Ads Manager: pick the date range, click **Breakdown**, then **By time**, then **Day**. Then **Reports → Export table data → CSV**.
+- **Your lead export.** One row per lead you received, with the date and the campaign. From your CRM, tracker or lead platform.
 
 ## Try it on the sample files first
 
-Run it on the two files in `samples/`. The right answers:
+The sample data is simulated. It runs from 20 October to 25 November 2026, with the change on 12 November.
 
 | Check | Correct result |
 | --- | --- |
-| Totals | $20,300 spent, 56 FTDs from tracked ad sets, $362.50 per FTD, $22,900 revenue, $2,600 profit |
-| Cheapest CPL | PL_Nov_Scale / Broad at $8.00 per lead, but $600 per FTD and a $950 loss |
-| Cheapest FTD | PL_Nov_Scale / Retarget_30d at $150 per FTD, despite a $15 CPL |
-| Losing money | UK_Test / Broad (−$1,500), PL_Nov_Scale / Broad (−$950), DE_Q4_Main / Broad_25-54 (−$850), UK_Test / Static_Carousel (−$800) |
-| Broken tracking | UK_Test / Static_Carousel: $800 spent, 40 leads reported by Meta, 0 received |
-| Unattributed | 24 leads with no UTMs, holding 2 FTDs and $850 revenue |
-| Name fixes | 6 mismatches, for example "de_q4_main" vs "DE_Q4_Main" and "Lookalike 3pct" vs "Lookalike_3pct" |
+| Normal gap before 12 Nov | 4.1% (median daily gap) |
+| Gap opened | 12 November |
+| Gap from 12 Nov | 24.1% (1,825 Meta leads vs 1,470 received) |
+| Extra leads Meta reported | 355 from 12 November |
+| CPL | Meta CPL looks better: $21.00 before, $17.66 after. Real CPL barely moved: $22.40 before, $21.92 after |
+| Single-day spike | 3 November: Meta 114, received 48. A tracking problem, not Meta |
+| Per campaign | Leads_Main_Tier1 gap 23.8%, Leads_Lookalike_2pct gap 24.8% from 12 Nov |
 
 If the AI's numbers don't match, ask it to show the code it ran.
 
@@ -49,4 +51,4 @@ If the AI's numbers don't match, ask it to show the code it ran.
 
 ---
 
-Made by [Alion](https://alion.app). Alion tracks revenue per lead by source as leads come in, so you don't have to rebuild this every month. Free for your first 100 leads a month.
+Made by [Alion](https://alion.app). Alion counts every lead as it arrives, so you always have the real number. Free for your first 100 leads a month.
