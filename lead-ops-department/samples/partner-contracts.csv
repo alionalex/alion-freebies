@@ -1,0 +1,6 @@
+partner,deal,price_usd,valid_from,valid_to,payment_terms_days,dispute_window_days
+Partner A,CPA,450,2026-09-01,,15,14
+Partner B,CPA,400,2026-09-01,2026-10-31,30,7
+Partner B,CPA,350,2026-11-01,,30,7
+Partner C,CPA,400,2026-09-15,,15,14
+Partner D,CPA,500,2026-10-01,,7,21

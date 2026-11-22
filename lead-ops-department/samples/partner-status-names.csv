@@ -1,0 +1,23 @@
+partner,raw_status
+Partner A,NA
+Partner A,CB
+Partner A,NI
+Partner A,Invalid
+Partner A,Depositor
+Partner B,no_answer
+Partner B,callback
+Partner B,not_interested
+Partner B,wrong_number
+Partner B,ftd
+Partner B,dup
+Partner C,No Answer
+Partner C,Call Back Later
+Partner C,Not Interested
+Partner C,Duplicate
+Partner C,Converted
+Partner D,Unreachable
+Partner D,Follow up
+Partner D,Declined
+Partner D,Fake
+Partner D,Deposit
+Partner D,Hung up
