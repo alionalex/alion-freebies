@@ -8,6 +8,7 @@ Free Claude skills and prompts for media buyers and lead gen teams.
 | [Meta vs real leads](meta-lead-gap) | Compares Meta's lead count with the leads you actually received, day by day, and flags when the gap opens |
 | [7 Claude routines](claude-routines) | One check for each day of the week: weekly brief, Meta gap, missing statuses, duplicates, payouts, resends and caps |
 | [Lead ops department](lead-ops-department) | A full lead ops team in one Claude skill: 20 roles from fraud analyst to dispute writer |
+| [Panel checker](panel-checker) | Claude reads your partner panels with Computer Use, fills one status sheet and flags every mismatch with your export |
 
 Each folder has a README with setup steps and sample files to test with.
 
